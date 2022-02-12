@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hillary Pham - Activity 7</title>
+    <link rel="stylesheet" href="templates/modal.css" type="text/css">
+  </head>
+  <body>
+    <h1 class="title">Modal Window</h1>
+    <a href="#modalWindow" class="open">Click Here</a>
+    <!-- Modal Window -->
+    <form action="templates/checkout.html" method="post">
+      <div class="modalBack" id="modalWindow">
+        <div class="modalFront">
+          <a href="#" class="close">&#9932;</a>
+          <div class="imgCont">
+            <img src="templates/images/lotion.jpg" alt="BLACK CURRANT CEDARWOOD" title="BLACK CURRANT CEDARWOOD">
+          </div>
+          <div class="info">
+            <p class="itemName">BLACK CURRANT CEDARWOOD</p>
+            <p>Body Wash and Foam Bath</p>
+            <p>Inspired by the coolness of the winter season, enhance your aromatherapy routine with this uplifting blend of black currant and cedarwood essential oils.</p>
+            <span class="wasPrice">Was $12.50 </span><span class="nowPrice">Now $3.50</span>
+            <hr>
+            <input type="submit" class="add" value="ADD TO BAG" onclick="item1();"></input>
+          </div>
+    </form>
+        <script type="text/javascript">
+          function item1(){
+            let itemN = 'BLACK CURRANT CEDARWOOD';
+            localStorage.setItem('item_name',itemN);
+            let itemP = 3.50;
+            localStorage.setItem('item_price',itemP)
+            return false;
+          }
+        </script>
+      </div>
+    </div>
+  </body>
+</html>

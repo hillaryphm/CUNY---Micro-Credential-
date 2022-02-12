@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      legend{
+        padding: 0.5em 0.5em;
+      }
+      fieldset{width:50%;}
+    </style>
+  </head>
+  <body>
+      <form action="templates/thankyou.html" method="get">
+        <fieldset>
+          <legend>CHECKOUT</legend>
+          <label><b>Items in your bag</b></label>
+          <p><span id="iName"></span> .... $<span id="iPrice"></span></
+
+          <script type="text/javascript">
+            let iName = document.querySelector('#iName');
+            iName.innerHTML = localStorage.getItem('item_name');
+            let iPrice = document.querySelector('#iPrice');
+            iPrice.innerHTML = localStorage.getItem('item_price');
+          </script>
+          <hr>
+          <label for="userN">Enter username: <input type="text" name="userName" id="userN" placeholder="Type username..."></label>
+          <label for="emailN">Enter email: <input type="text" name="email" id="emailN" placeholder="Type email..."></label>
+          <label><input type="submit" value="SUBMIT" onclick="passvalue();"></label>
+
+          <script type="text/javascript">
+            function passvalue(){
+              let userN = document.querySelector('#userN').value;
+              localStorage.setItem('user_name',userN);
+              let emailN = document.querySelector('#emailN').value;
+              localStorage.setItem('email_name',emailN);
+            }
+          </script>
+        </fieldset>
+      </form>
+  </body>
+</html>
